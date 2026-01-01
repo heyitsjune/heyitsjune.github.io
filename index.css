@@ -19,6 +19,26 @@ body {
     margin-left: auto;
 }
 
+form {
+    display: flex;
+}
+
+#message-text {
+    padding: 5px;
+    text-align: center;
+    vertical-align: middle;
+    flex-grow: 1;
+    resize: none;
+    background-color: black;
+    border: 1px solid gray;
+    outline: none;
+    transition: 0.3s all;
+}
+
+#message-text:focus {
+    border: 1px solid white;
+}
+
 .top {
     z-index: 99;
     width: 100%;
