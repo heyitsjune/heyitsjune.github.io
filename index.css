@@ -15,16 +15,6 @@
     pointer-events: none;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background-image: url("/noise.webp");
-    opacity: 0.12;
-    filter: blur(25px);
-}
-
 html,
 body {
     background-color: black;
