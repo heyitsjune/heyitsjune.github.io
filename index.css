@@ -5,10 +5,10 @@
 }
 
 #cursor {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
     filter: blur(50px);
     position: absolute;
-    height: 100px;
+    height: 165px;
     border-radius: 100%;
     aspect-ratio: 1;
     z-index: 999;
@@ -64,7 +64,8 @@ form {
     border: 1px solid white;
 }
 
-.top {
+.top,
+.bottom {
     backdrop-filter: blur(15px);
     z-index: 99;
     width: 100%;
@@ -74,9 +75,19 @@ form {
     border: 1px dashed lightgray;
     padding: 12px;
     width: 340px;
+    position: absolute;
 }
 
-.top a {
+.top {
+    top: 5px;
+}
+
+.bottom {
+    bottom: 5px;
+}
+
+.top a,
+.bottom a {
     margin: 2px;
     border: 1px dashed black;
     padding: 0 2px;

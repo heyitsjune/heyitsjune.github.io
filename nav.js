@@ -67,4 +67,12 @@ window.addEventListener("click", (e) => {
     navigate(link.href);
 })
 
-navigate("home.html");
+const whitelist = ["projects", "home", "blog"]
+
+const search = window.location.search;
+const params = new URLSearchParams(search);
+if (params.get("a") && whitelist.includes(params.get("a"))) {
+    navigate(params.get("a")+".html");
+} else {
+    navigate("home.html");
+}
