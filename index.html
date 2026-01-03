@@ -7,30 +7,32 @@
     <link rel="stylesheet" href="index.css">
     <title>junes.page</title>
 
-    <script src="cursor.js" defer></script>
-    <script src="nav.js" defer></script>
-    <script src="time.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="data:,">
 
-    <link rel="preload" href="fm.js">
-    <link rel="preload" href="time.js">
-    <link rel="preload" href="form.js">
-    <link rel="preload" href="index.css" as="stylesheet">
-    <link rel="preload" href="sun.svg" as="image">
-    <link rel="preload" href="moon.svg" as="image">
+    <link rel="preload" href="scripts/fm.js" as="script">
+    <link rel="preload" href="scripts/time.js" as="script">
+    <link rel="preload" href="scripts/form.js" as="script">
+    <link rel="preload" href="index.css" as="style">
+    <link rel="preload" href="img/sun.svg" as="image">
+    <link rel="preload" href="img/moon.svg" as="image">
+
+    <script src="scripts/cursor.js" defer></script>
+    <script src="scripts/nav.js" defer></script>
+    <script src="scripts/time.js" defer></script>
 </head>
 
 <body>
     <div class="top">
-        <a href="home.html" class="active">home</a>
-        <a href="blog.html">blog</a>
-        <a href="projects.html">projects</a>
-        <div id="time" title="(In my timezone)">00:00:00</div>
+        <a href="routes/home.html" class="active">home</a>
+        <a href="routes/blog.html">blog</a>
+        <a href="routes/projects.html">projects</a>
+        <div id="time">00:00:00</div>
     </div>
     <div id="app">
 
     </div>
     <div class="bottom" style="justify-content: center;">
-        <p>idk what to put here</p>
+        <p>made with love and 6 monsters</p>
     </div>
 </body>
 

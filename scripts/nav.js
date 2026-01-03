@@ -2,8 +2,26 @@
 
 const body = document.getElementById("app");
 
+const whitelist = ["projects", "home", "blog"]
+
 let postRender = [];
 window.postRender = postRender;
+
+async function updateCurrent(loc) {
+    const links = document.querySelectorAll(".top a");
+
+    loc = loc.startsWith("http") ? new URL(loc) : new URL(window.location.href + loc);
+    loc = new URL(loc);
+    loc = loc.pathname.replaceAll("/", "").replaceAll(".html", "").replaceAll("routes", "")
+
+    links.forEach(link => {
+        if (link.href.includes(loc)) {
+            link.classList = `active`;
+        } else {
+            link.classList = ``;
+        }
+    })
+}
 
 async function render(data, loc) {
     const templates = {
@@ -32,6 +50,9 @@ async function render(data, loc) {
                 script.src = old.src;
                 script.onload = resolve;
                 script.onerror = reject;
+                if (old.type) {
+                    script.type = old.type;
+                }
             } else {
                 script.textContent = old.textContent;
                 resolve();
@@ -50,6 +71,7 @@ async function navigate(loc) {
     try {
         const res = await fetch(loc);
         const data = await res.text();
+        updateCurrent(loc);
         render(data, loc);
     } catch (e) {
         console.error(e);
@@ -67,12 +89,10 @@ window.addEventListener("click", (e) => {
     navigate(link.href);
 })
 
-const whitelist = ["projects", "home", "blog"]
-
 const search = window.location.search;
 const params = new URLSearchParams(search);
 if (params.get("a") && whitelist.includes(params.get("a"))) {
-    navigate(params.get("a")+".html");
+    navigate(params.get("a") + ".html");
 } else {
-    navigate("home.html");
+    navigate("routes/home.html");
 }

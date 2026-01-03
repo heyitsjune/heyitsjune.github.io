@@ -7,7 +7,7 @@ function getTime() {
     const time = date.toLocaleTimeString();
     let icon = time.includes("AM") ? "sun" : "moon";
 
-    timeElem.innerHTML = `<img src="${icon}.svg"><span>${time.toLocaleLowerCase()}</span>`
+    timeElem.innerHTML = `<img src="img/${icon}.svg"><span>${time.toLocaleLowerCase()}</span>`
 }
 
 setInterval(getTime, 1000)

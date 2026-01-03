@@ -4,6 +4,11 @@
     user-select: none;
 }
 
+.subtext {
+    font-size: 90%;
+    color: gray;
+}
+
 #cursor {
     background: rgba(255, 255, 255, 0.2);
     filter: blur(50px);
@@ -27,6 +32,10 @@ body {
     z-index: 0;
 }
 
+p{
+    padding: 0;
+    margin: 7.5px;
+}
 
 #time {
     margin-left: auto;
